@@ -59,5 +59,48 @@ em caso de problemas [acesse](https://github.com/settings/keys).
     ```
     Iniciando um projeto. 
     ```bash
-        $ django-admin startproject mysite
+        $ django-admin startproject nameproject .
     ```
+    criando uma app:
+    ```bash
+        $ python manage.py startapp nameapp
+    ```
+    No arquivo ```settings.py``` adicionar o app criado :
+
+    ```python
+        INSTALLED_APPS = [
+            'django.contrib.admin',
+            'django.contrib.auth',
+            'django.contrib.contenttypes',
+            'django.contrib.sessions',
+            'django.contrib.messages',
+            'django.contrib.staticfiles',
+            'nameapp' # nome do app criado
+            ]
+    ```
+    criar na pasta nameapp um arqurivo ```urls.py ``` e inserir:
+
+    ```python
+    from django.urls import path
+    from recipes.views import sobre, home, contato
+
+    urlpatterns = [
+        path('', home), # exemplo de views criada
+        path('sobre/', sobre),
+        path('contato/', contato),
+    ]
+    ```
+    Em seguida na pasta nameproject no em ```urls.py ``` adicionar:
+
+    ```python
+        from django.contrib import admin
+        from django.urls import path, include # include adiconado
+
+        urlpatterns = [
+            path('admin/', admin.site.urls),
+            path('', include('nameapp.urls')), # adiciona as rotas dentro da pasta nameapp
+        ]
+    ```
+    Para evitar colisões de nomes crie na pasta ```nameapp``` uma pasta chamada ```templates``` com uma subpasta ```nameapp```
+            
+        C:\nameproject\nameapp\templates\nameapp
