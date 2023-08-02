@@ -134,7 +134,7 @@
             background: none;
             outline: none;
             padding: 1rem;
-           
+
         }
 
         .search-button {
@@ -148,16 +148,30 @@
             width: 100%;
             padding-right: 3rem;
         }
-        .search-button:focus{ 
+
+        .search-button:focus {
             outline: 1px solid var(--color-primary);
-            background: rgba(0,0,0,.6);
+            background: rgba(0, 0, 0, .6);
         }
+
         .search-form:focus-within {
             border-color: var(--color-primary);
             background-color: var(--color-white);
         }
+
         .search-form:focus-within .search-button {
             color: var(--color-primary);
         }
-        </style>
+
+        .main-content {
+            padding-top: 0;
+        }
+        .main-content-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: var(--spacing-gutter-large);
+        }
+  
+
+    </style>
 </head>
