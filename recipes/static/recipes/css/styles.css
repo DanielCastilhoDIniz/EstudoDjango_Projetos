@@ -152,7 +152,10 @@
     .recipe-title-container {
     padding: var(--spacing-gutter-medium);
     }
-
+    .recipe-title-container a {
+      text-decoration: none;
+      color: var(--color-primary-dark);
+      }
     .recipe-author {
     padding: 0 var(--spacing-gutter-medium);
     }
@@ -219,7 +222,9 @@
         transform: scale(1);
         box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.2);
       }
-
+      .preparation-steps {
+        padding: var(--spacing-gutter-medium);
+      }
 
       .main-footer {
         display: flex;
